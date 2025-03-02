@@ -19,3 +19,7 @@ if __name__ == '__main__':
 
     # get symbols information
     # pprint(API_obj.get_symbol_information(symbols=['btc_usdt','ai3_usdt']))
+
+    # get depth information
+    # pprint(API_obj.get_depth_data(symbol='ai3_usdt',
+    #                               limit=100))
