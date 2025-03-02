@@ -9,4 +9,7 @@ if __name__ == '__main__':
     API_obj = pyXT()
 
     # get the sever time
-    pprint(API_obj.get_server_time())
+    # pprint(API_obj.get_server_time())
+
+    # get the client IP
+    pprint(API_obj.get_client_IP())

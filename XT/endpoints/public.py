@@ -22,3 +22,15 @@ class PublicEndpoints():
                         added_url=added_url,
                         data=data,
                         max_retries=max_retries).send()
+
+    def get_client_IP(self,
+                      max_retries: int = 1):
+
+        added_url = r'v4/public/client'
+
+        data = {}
+
+        return API_call(base_url=self.base_endpoint,
+                        added_url=added_url,
+                        data=data,
+                        max_retries=max_retries).send()
