@@ -8,7 +8,7 @@ Python wrapper for the XT crypto exchange API
 
 - All the available wrapper functions can be found in _EXAMPLE.py.
 
-- Official API documentation: https://github.com/xtpub/api-doc/blob/master/rest-api-v1-en.md
+- Official API documentation: https://doc.xt.com/
 
 # Setup
 ## Windows (tested with win10Pro, win11Pro)
