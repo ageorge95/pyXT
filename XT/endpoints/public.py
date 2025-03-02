@@ -34,3 +34,22 @@ class PublicEndpoints():
                         added_url=added_url,
                         data=data,
                         max_retries=max_retries).send()
+
+    def get_symbol_information(self,
+                               symbol: AnyStr = '',
+                               symbols: List[AnyStr] = (),
+                               max_retries: int = 1):
+
+        added_url = r'v4/public/symbol'
+
+        if symbol:
+            data = {'symbol': symbol}
+        elif symbols:
+            data = {'symbols': ','.join(symbols)}
+        else:
+            data = {}
+
+        return API_call(base_url=self.base_endpoint,
+                        added_url=added_url,
+                        data=data,
+                        max_retries=max_retries).send()
