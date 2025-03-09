@@ -41,9 +41,9 @@ class OrderEndpoints():
                      type: Literal['LIMIT', 'MARKET'],
                      bizType: Literal['SPOT', 'LEVER'] = 'SPOT',
                      timeInForce: Literal['GTC', 'FOK', 'IOC', 'GTX'] = 'FOK',
-                     price: float = None,
-                     quantity: float = None,
-                     quoteQty: float = None,
+                     price: float | str = None,
+                     quantity: float | str = None,
+                     quoteQty: float | str = None,
                      max_retries: int = 1):
 
         '''
