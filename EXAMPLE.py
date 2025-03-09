@@ -25,7 +25,23 @@ if __name__ == '__main__':
 
     # get depth information
     # pprint(API_obj.get_depth_data(symbol='ai3_usdt',
-    #                               limit=100))
+    #                               limit=2))
+    # response example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'asks': [['0.3615', '54.65'],
+    #                               ['0.3616', '36.56'],
+    #                               ['1.4998', '53.23'],
+    #                               ['1.4999', '50.00']],
+    #                      'bids': [['0.3471', '337.65'],
+    #                               ['0.3468', '2578.73'],
+    #                               ['0.0453', '327.20'],
+    #                               ['0.0168', '764.54']],
+    #                      'lastUpdateId': 1741313703530,
+    #                      'symbol': 'ai3_usdt',
+    #                      'timestamp': 1741541010718}}}
 
     # ########### order examples ###########
     # initialize the APi wrapper
