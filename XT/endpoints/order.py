@@ -3,7 +3,6 @@ from typing import AnyStr
 from XT.network_wrappers import API_call
 from XT.utils import (check_API_key,
                       AuthHeaderGenerator)
-import requests
 
 class OrderEndpoints():
     _log: getLogger
@@ -20,6 +19,7 @@ class OrderEndpoints():
                          max_retries: int = 1):
 
         added_url = r'v4/order'
+        call_method = 'GET'
 
         data = {'orderId': orderId}
 
@@ -28,8 +28,8 @@ class OrderEndpoints():
                         data=data,
                         headers=AuthHeaderGenerator(self.public_key,
                                                     self.private_key).generate(url=added_url,
-                                                                               method='GET',
+                                                                               method=call_method,
                                                                                params=data,
                                                                                data=None),
                         max_retries=max_retries,
-                        call_method=requests.get).send()
+                        call_method=call_method).send()
