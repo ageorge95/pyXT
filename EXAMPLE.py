@@ -3,6 +3,9 @@ from XT.pyXT import pyXT
 from pprint import pprint
 
 if __name__ == '__main__':
+    public_key = ''
+    private_key = ''
+
     configure_logger()
     # ########### public examples ###########
     # initialize the APi wrapper
@@ -23,3 +26,19 @@ if __name__ == '__main__':
     # get depth information
     # pprint(API_obj.get_depth_data(symbol='ai3_usdt',
     #                               limit=100))
+
+    # ########### order examples ###########
+    # initialize the APi wrapper
+    # API_obj = pyXT(public_key=public_key,
+    #                private_key=private_key)
+
+    # get single order data
+    # pprint(API_obj.get_single_order(orderId=457101291133639872))
+
+    # ########### balance examples ###########
+    # initialize the APi wrapper
+    # API_obj = pyXT(public_key=public_key,
+    #                private_key=private_key)
+
+    # get the balance of a certain currency
+    # pprint(API_obj.get_balance(currency='usdt'))

@@ -1,20 +1,22 @@
 from logging import getLogger
 from typing import AnyStr
 from XT.endpoints.public import PublicEndpoints
+from XT.endpoints.order import OrderEndpoints
+from XT.endpoints.balance import BalanceEndpoints
 
 base_endpoint: AnyStr = 'https://sapi.xt.com'
 
-class pyXT(PublicEndpoints):
+class pyXT(PublicEndpoints,
+           OrderEndpoints,
+           BalanceEndpoints):
 
     def __init__(self,
-                 API_key: AnyStr = None,
-                 API_secret: AnyStr = None,
-                 API_passphrase: AnyStr = None):
+                 public_key: AnyStr = None,
+                 private_key: AnyStr = None):
 
         self._log = getLogger()
-        self.API_key = API_key
-        self.API_secret = API_secret
-        self.API_passphrase = API_passphrase
+        self.public_key = public_key
+        self.private_key = private_key
 
         self.base_endpoint = base_endpoint
 
