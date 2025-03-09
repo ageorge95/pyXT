@@ -35,6 +35,31 @@ if __name__ == '__main__':
     # get single order data
     # pprint(API_obj.get_single_order(orderId=457101291133639872))
 
+    # submit a market SELL order
+    # pprint(API_obj.submit_order(symbol='ai3_usdt',
+    #                             side='SELL',
+    #                             type='MARKET',
+    #                             quantity=20))
+    # response example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'clientOrderId': None, 'orderId': '12345'}}}
+
+    # submit a market BUY order
+    # pprint(API_obj.submit_order(symbol='ai3_usdt',
+    #                             side='BUY',
+    #                             type='MARKET',
+    #                             quoteQty=6.93))
+    # response example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'clientOrderId': None, 'orderId': '12345'}}}
+
+
     # ########### balance examples ###########
     # initialize the APi wrapper
     # API_obj = pyXT(public_key=public_key,
