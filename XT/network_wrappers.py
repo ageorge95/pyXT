@@ -1,10 +1,10 @@
 from requests import get, post
-from typing import AnyStr,\
-    Dict
+from typing import (AnyStr,
+                    Dict)
 from logging import getLogger
 from traceback import format_exc
 
-class API_call():
+class API_call:
     def __init__(self,
                  base_url: AnyStr,
                  added_url: AnyStr,
