@@ -83,3 +83,21 @@ if __name__ == '__main__':
 
     # get the balance of a certain currency
     # pprint(API_obj.get_balance(currency='usdt'))
+
+    # result example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'availableAmount': '0.00489971',
+    #                      'convertBtcAmount': '0.00000005',
+    #                      'convertUsdtAmount': '0.004899718',
+    #                      'copyTrade': '0.00000000',
+    #                      'currency': 'usdt',
+    #                      'currencyId': 11,
+    #                      'freeze': '0.00000000',
+    #                      'frozenAmount': '0.00000000',
+    #                      'lock': '0.00000000',
+    #                      'totalAmount': '0.00489971',
+    #                      'trade': '0.00000000',
+    #                      'withdraw': '0.00000000'}}}
