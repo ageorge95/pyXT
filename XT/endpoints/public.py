@@ -1,7 +1,6 @@
 from logging import getLogger
 from typing import (AnyStr,
-                    List,
-                    Literal)
+                    List)
 from XT.network_wrappers import API_call
 
 class PublicEndpoints():
