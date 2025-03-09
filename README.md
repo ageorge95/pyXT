@@ -1,4 +1,4 @@
-# pyOkex
+# pyXT
 Python wrapper for the XT crypto exchange API
 
 # How to use
