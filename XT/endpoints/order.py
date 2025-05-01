@@ -35,6 +35,52 @@ class OrderEndpoints():
                         call_method=call_method).send()
 
     @check_API_key
+    def get_historical_orders(self,
+                              symbol: str,
+                              order_type: Literal['LIMIT', 'MARKET'],
+                              limit: int = 2,
+                              max_retries: int = 1):
+
+        added_url = r'v4/history-order'
+        call_method = 'GET'
+
+        data = {'symbol': symbol,
+                'order_type': order_type,
+                'limit': limit}
+
+        return API_call(base_url=self.base_endpoint,
+                        added_url=added_url,
+                        data=data,
+                        headers=AuthHeaderGenerator(self.public_key,
+                                                    self.private_key).generate(url=added_url,
+                                                                               method=call_method,
+                                                                               params=data,
+                                                                               data=None),
+                        max_retries=max_retries,
+                        call_method=call_method).send()
+
+    @check_API_key
+    def query_open_order(self,
+                         symbol: str,
+                         max_retries: int = 1):
+
+        added_url = r'v4/open-order'
+        call_method = 'GET'
+
+        data = {'symbol': symbol}
+
+        return API_call(base_url=self.base_endpoint,
+                        added_url=added_url,
+                        data=data,
+                        headers=AuthHeaderGenerator(self.public_key,
+                                                    self.private_key).generate(url=added_url,
+                                                                               method=call_method,
+                                                                               params=data,
+                                                                               data=None),
+                        max_retries=max_retries,
+                        call_method=call_method).send()
+
+    @check_API_key
     def submit_order(self,
                      symbol: str,
                      side: Literal['BUY', 'SELL'],
@@ -98,5 +144,24 @@ class OrderEndpoints():
                                                                                method=call_method,
                                                                                params=None,
                                                                                data=data),
+                        max_retries=max_retries,
+                        call_method=call_method).send()
+
+    @check_API_key
+    def cancel_order(self,
+                     orderId: int,
+                     max_retries: int = 1):
+
+        added_url = fr'v4/order/{orderId}'
+        call_method = 'DELETE'
+
+        return API_call(base_url=self.base_endpoint,
+                        added_url=added_url,
+                        data={},
+                        headers=AuthHeaderGenerator(self.public_key,
+                                                    self.private_key).generate(url=added_url,
+                                                                               method=call_method,
+                                                                               params=None,
+                                                                               data={}),
                         max_retries=max_retries,
                         call_method=call_method).send()

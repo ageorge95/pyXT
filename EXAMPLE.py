@@ -39,7 +39,7 @@ if __name__ == '__main__':
     #                               ['0.3468', '2578.73'],
     #                               ['0.0453', '327.20'],
     #                               ['0.0168', '764.54']],
-    #                      'lastUpdateId': 1741313703530,
+    #                      'lastUpdateId': 0,
     #                      'symbol': 'ai3_usdt',
     #                      'timestamp': 1741541010718}}}
 
@@ -49,7 +49,14 @@ if __name__ == '__main__':
     #                private_key=private_key)
 
     # get single order data
-    # pprint(API_obj.get_single_order(orderId=457101291133639872))
+    # pprint(API_obj.get_single_order(orderId=0))
+
+    # get historical orders data
+    # pprint(API_obj.get_historical_orders(symbol='ai3_usdt',
+    #                                      order_type='LIMIT'))
+
+    # get open order data
+    # pprint(API_obj.query_open_order(symbol='ai3_usdt'))
 
     # submit a market SELL order
     # pprint(API_obj.submit_order(symbol='ai3_usdt',
@@ -75,6 +82,16 @@ if __name__ == '__main__':
     #           'rc': 0,
     #           'result': {'clientOrderId': None, 'orderId': '12345'}}}
 
+    # cancel an order
+    # pprint(API_obj.cancel_order(orderId=0))
+    # response example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'cancelId': '0',
+    #                      'clientCancelId': '',
+    #                      'orderId': '0'}}}
 
     # ########### balance examples ###########
     # initialize the APi wrapper

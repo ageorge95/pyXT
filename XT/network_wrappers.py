@@ -12,7 +12,7 @@ class API_call:
                  data: Dict,
                  headers: Dict = None,
                  max_retries: int = 1,
-                 call_method: Literal['GET', 'POST'] = 'GET'):
+                 call_method: Literal['GET', 'POST', 'DELETE'] = 'GET'):
 
         self._log = getLogger()
         self.final_URL = base_url + '/' + added_url
@@ -21,7 +21,8 @@ class API_call:
         self.headers = headers
         self.call_method_description = call_method
         self.call_method_callable = {'GET': requests.get,
-                                     'POST': requests.post}[call_method]
+                                     'POST': requests.post,
+                                     'DELETE': requests.delete}[call_method]
 
     def send(self) -> Dict:
 
@@ -33,7 +34,8 @@ class API_call:
                 params = dict(filter(lambda _:_[1], {'url': self.final_URL,
                                                      'headers': self.headers,
                                                      'timeout': (5*60,5*60)}.items()))
-                if self.call_method_callable is requests.post:
+                if (self.call_method_callable is requests.post or
+                        self.call_method_callable is requests.delete):
                     params['json'] = self.data
                 elif self.call_method_callable is requests.get:
                     params['params'] = self.data
