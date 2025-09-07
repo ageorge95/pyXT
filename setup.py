@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DESCRIPTION = 'XT Exchange python wrapper'
 LONG_DESCRIPTION = 'Various scripts that can be used to easily interact with the XT exchange.'
 
@@ -13,7 +13,9 @@ setup(
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[],
+    install_requires=[
+        "requests"
+    ],
     extras_require={},
     keywords=['python', 'pyXT', 'XT']
 )
