@@ -118,3 +118,38 @@ if __name__ == '__main__':
     #                      'totalAmount': '0.00489971',
     #                      'trade': '0.00000000',
     #                      'withdraw': '0.00000000'}}}
+
+    # get the balance of all account currencies
+    # pprint(API_obj.get_balances())
+
+    # result example:
+    # {'API_call_success': True,
+    #  'data': {'ma': [],
+    #           'mc': 'SUCCESS',
+    #           'rc': 0,
+    #           'result': {'assets': [{'availableAmount': '0.00007800',
+    #                                  'convertBtcAmount': '0',
+    #                                  'convertUsdtAmount': '0.00007794',
+    #                                  'copyTrade': '0.00000000',
+    #                                  'currency': 'usdc',
+    #                                  'currencyId': 564,
+    #                                  'freeze': '0.00000000',
+    #                                  'frozenAmount': '0.00000000',
+    #                                  'lock': '0.00000000',
+    #                                  'totalAmount': '0.00007800',
+    #                                  'trade': '0.00000000',
+    #                                  'withdraw': '0.00000000'},
+    #                                 {'availableAmount': '2.75200781',
+    #                                  'convertBtcAmount': '0.00072845',
+    #                                  'convertUsdtAmount': '84.239907818',
+    #                                  'copyTrade': '0.00000000',
+    #                                  'currency': 'usdt',
+    #                                  'currencyId': 11,
+    #                                  'freeze': '0.00000000',
+    #                                  'frozenAmount': '81.48790000',
+    #                                  'lock': '0.00000000',
+    #                                  'totalAmount': '84.23990781',
+    #                                  'trade': '81.48790000',
+    #                                  'withdraw': '0.00000000'}],
+    #                      'totalBtcAmount': '0.00160149',
+    #                      'totalUsdtAmount': '185.2011'}}}
